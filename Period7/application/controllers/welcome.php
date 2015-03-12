@@ -19,12 +19,27 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		echo 'index!';
+		//echo 'index!';
 		//$this->load->view('welcome_message');
+
+		$query = $this->db->query('SELECT * FROM users');
+		foreach ($query->result_array() as $row) {
+			echo print_r($row) . '<br/>';
+		}
+
 	}
 
 	public function another($arg1) {
-		echo 'another! ' . ($arg1 == 3);
+		//echo 'another! ' . ($arg1 == 3);
+
+		$query = $this->db->query('SELECT * FROM users WHERE user_id = ?',
+			array($arg1));
+
+
+		foreach ($query->result_array() as $row) {
+			echo print_r($row) . '<br/>';
+		}
+
 	}
 }
 
