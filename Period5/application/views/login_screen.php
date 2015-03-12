@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<form method="POST" action="/index.php/login/process">
+<form method="POST" action="/login/process">
 Username: <input type="text" name="username1" />
 Password: <input type="password" name="password" />
 <input type="submit" value="BLOOB" />
